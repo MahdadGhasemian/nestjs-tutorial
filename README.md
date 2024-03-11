@@ -1,36 +1,26 @@
-# Http Server Implementation
+# Car Value
 
-![Http Server Implementation](./.images/http-server.png)
+![Defination](./.images/carvalue-defination.png)
 
-# Parts Of Nest
+![APIs](./.images/carvalue-apis.png)
 
-![Parts Of Nest](./.images/parts-of-nest.png)
+![Module](./.images/carvalue-module.png)
 
-# Server
+![DB](./.images/carvalue-db.png)
 
-![Server](./.images/server.png)
-
-# File Naming Conventions
-
-![File Naming Conventions](./.images/file-naming-conventions.png)
-
-# Validation Pipe
-
-![Validation Pipe](./.images/validation-pipe.png)
-
-# Services and Repositories
-
-![Services and Repositories](./.images/services-and-repositories.png)
-![Services and Repositories Naming](./.images/services-and-repositories-naming.png)
-
-# Inversion of Control Principle
-
-![principle-1](./.images/principle-1.png)
-
-# CMDs
+![DB Repository API](./.images/carvalue-db-repository.png)
 
 ```bash
-nest new messages
-nest generate module messages
-nest generate controller messages/messages --flat
+nest generate module users
+nest generate module reports
+
+nest generate controller users
+nest generate controller reports
+
+nest generate service users
+nest generate service reports
+```
+
+```bash
+npm install --save @nestjs/typeorm typeorm sqlite3
 ```
