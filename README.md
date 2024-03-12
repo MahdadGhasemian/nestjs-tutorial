@@ -10,6 +10,8 @@
 
 ![DB Repository API](./.images/carvalue-db-repository.png)
 
+![USER](./.images/carvalue-user.png)
+
 ```bash
 nest generate module users
 nest generate module reports
