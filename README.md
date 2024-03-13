@@ -12,6 +12,8 @@
 
 ![USER](./.images/carvalue-user.png)
 
+![USER Auth](./.images/carvalue-user-auth.png)
+
 ```bash
 nest generate module users
 nest generate module reports

@@ -6,7 +6,4 @@ export class CreateUserDto {
 
   @IsString()
   password: string;
-
-  @IsString()
-  specialContent: string;
 }
