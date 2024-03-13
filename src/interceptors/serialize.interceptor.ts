@@ -4,8 +4,9 @@ import {
   NestInterceptor,
   UseInterceptors,
 } from '@nestjs/common';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { plainToClass } from 'class-transformer';
-import { Observable, map } from 'rxjs';
 
 interface ClassConstructor {
   new (...args: any[]): {};
