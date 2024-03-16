@@ -14,6 +14,25 @@
 
 ![USER Auth](./.images/carvalue-user-auth.png)
 
+# Relationships
+
+## One To One
+
+![One To One](./.images/carvalue-relationships-onetoone.png)
+
+## One To Many <> Many To One
+
+![One To Many](./.images/carvalue-relationships-onetomany.png)
+
+## Many To Many
+
+![Many To Many](./.images/carvalue-relationships-manytomany.png)
+
+## User Relationship
+
+![User Relationship 1](./.images/carvalue-user-relationship.png)
+![User Relationship 2](./.images/carvalue-user-relationship2.png)
+
 ```bash
 nest generate module users
 nest generate module reports
