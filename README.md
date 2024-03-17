@@ -53,3 +53,7 @@ nest generate service reports
 ```bash
 npm install --save @nestjs/typeorm typeorm sqlite3
 ```
+
+```bash
+npm run typeorm 
+```

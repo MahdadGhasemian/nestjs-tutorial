@@ -9,6 +9,7 @@ import { ReportsModule } from './reports/reports.module';
 import { User } from './users/user.entity';
 import { Report } from './reports/report.entity';
 import * as session from 'express-session';
+// import * as ormconfig from '../ormconfig';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import * as session from 'express-session';
       isGlobal: true,
       envFilePath: `.env.${process.env.NODE_ENV}`,
     }),
+    // TypeOrmModule.forRoot(ormconfig),
     TypeOrmModule.forRootAsync({
       inject: [ConfigService],
       useFactory: (config: ConfigService) => {
@@ -42,11 +44,13 @@ import * as session from 'express-session';
   ],
 })
 export class AppModule {
+  constructor(private configService: ConfigService) {}
+
   configure(consumer: MiddlewareConsumer) {
     consumer
       .apply(
         session({
-          secret: 'my-secret',
+          secret: this.configService.get('COOKIE_KEY'),
           resave: false,
           saveUninitialized: false,
         }),
