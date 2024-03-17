@@ -20,22 +20,15 @@ import { UserDto } from './dtos/user.dto';
 import { AuthService } from './auth.service';
 import { CurrentUser } from './decorators/current-user.decorator';
 import { User } from './user.entity';
-import { AuthGuard } from './guards/auth.guards';
-// import { CurrentUserInterceptor } from './interceptors/current-user.interceptors';
+import { AuthGuard } from '../guards/auth.guards';
 
 @Controller('auth')
 @Serialize(UserDto)
-// @UseInterceptors(CurrentUserInterceptor)
 export class UsersController {
   constructor(
     private usersService: UsersService,
     private authService: AuthService,
   ) {}
-
-  // @Get('/whoami')
-  // whoAmi(@Session() session: any) {
-  //   return this.usersService.findOne(session.userId);
-  // }
 
   @Get('/whoami')
   @UseGuards(AuthGuard)

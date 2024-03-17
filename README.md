@@ -33,6 +33,12 @@
 ![User Relationship 1](./.images/carvalue-user-relationship.png)
 ![User Relationship 2](./.images/carvalue-user-relationship2.png)
 
+# Incoming Request Flow
+
+![Incoming Request](./.images/carvalue-incoming-requests-flow.png)
+![Incoming Request](./.images/carvalue-incoming-requests-flow-admin.png)
+![Incoming Request](./.images/carvalue-incoming-requests-flow-admin-fixed.png)
+
 ```bash
 nest generate module users
 nest generate module reports
