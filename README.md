@@ -37,3 +37,19 @@ nest generate module logger
 ```bash
 docker-compose up
 ```
+
+# Auth
+```bash
+nest generate app auth
+nest generate module users
+# auth
+nest generate controller users
+# auth
+nest generate service users
+# auth
+
+pnpm i --save @nestjs/passport passport passport-local
+pnpm i --save-dev @types/passport-local
+pnpm i --save @nestjs/jwt passport-jwt
+pnpm i --save-dev @types/passport-jwt
+```
