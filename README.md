@@ -1,4 +1,4 @@
-# Car Value
+# Init
 
 ```bash
 nest new sleepr
@@ -30,5 +30,10 @@ pnpm i --save pino-pretty
 
 nest generate module logger
 # common
+```
 
+# Docker
+
+```bash
+docker-compose up
 ```
