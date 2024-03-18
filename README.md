@@ -1,59 +1,34 @@
 # Car Value
 
-![Defination](./.images/carvalue-defination.png)
-
-![APIs](./.images/carvalue-apis.png)
-
-![Module](./.images/carvalue-module.png)
-
-![DB](./.images/carvalue-db.png)
-
-![DB Repository API](./.images/carvalue-db-repository.png)
-
-![USER](./.images/carvalue-user.png)
-
-![USER Auth](./.images/carvalue-user-auth.png)
-
-# Relationships
-
-## One To One
-
-![One To One](./.images/carvalue-relationships-onetoone.png)
-
-## One To Many <> Many To One
-
-![One To Many](./.images/carvalue-relationships-onetomany.png)
-
-## Many To Many
-
-![Many To Many](./.images/carvalue-relationships-manytomany.png)
-
-## User Relationship
-
-![User Relationship 1](./.images/carvalue-user-relationship.png)
-![User Relationship 2](./.images/carvalue-user-relationship2.png)
-
-# Incoming Request Flow
-
-![Incoming Request](./.images/carvalue-incoming-requests-flow.png)
-![Incoming Request](./.images/carvalue-incoming-requests-flow-admin.png)
-![Incoming Request](./.images/carvalue-incoming-requests-flow-admin-fixed.png)
-
 ```bash
-nest generate module users
-nest generate module reports
+nest new sleepr
+nest generate library common
 
-nest generate controller users
-nest generate controller reports
+pnpm i --save @nestjs/mongoose mongoose
+pnpm i --save @nestjs/config
 
-nest generate service users
-nest generate service reports
-```
+nest generate module database -p common
+nest generate module config -p common
 
-```bash
-npm install --save @nestjs/typeorm typeorm sqlite3
-```
+pnpm start:dev
 
-```bash
-npm run typeorm 
+pnpm i --save joi
+
+nest generate app reservations
+# delete sleepr app
+
+nest generate resource reservations
+# reservations
+# REST API
+
+# Move all files inside app/reservations/src/reservations/* to app/reservations/src and delete reservations folder
+# create reservations.repository.ts file inside the src folder
+
+pnpm i --save class-validator class-transformer
+pnpm i --save nestjs-pino pino-http
+pnpm i --save pino-pretty
+
+nest generate module logger
+# common
+
 ```
