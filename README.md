@@ -52,4 +52,7 @@ pnpm i --save @nestjs/passport passport passport-local
 pnpm i --save-dev @types/passport-local
 pnpm i --save @nestjs/jwt passport-jwt
 pnpm i --save-dev @types/passport-jwt
+
+pnpm i --save bcryptjs express
+pnpm i --save-dev @types/bcryptjs
 ```
