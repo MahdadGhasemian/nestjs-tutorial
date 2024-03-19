@@ -58,4 +58,6 @@ pnpm i --save-dev @types/bcryptjs
 
 pnpm i --save cookie-parser
 pnpm i --save-dev @types/cookie-parser
+
+pnpm i --save @nestjs/microservices
 ```
