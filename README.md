@@ -55,4 +55,7 @@ pnpm i --save-dev @types/passport-jwt
 
 pnpm i --save bcryptjs express
 pnpm i --save-dev @types/bcryptjs
+
+pnpm i --save cookie-parser
+pnpm i --save-dev @types/cookie-parser
 ```
