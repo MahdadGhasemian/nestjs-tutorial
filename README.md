@@ -39,6 +39,7 @@ docker-compose up
 ```
 
 # Auth
+
 ```bash
 nest generate app auth
 nest generate module users
@@ -60,4 +61,11 @@ pnpm i --save cookie-parser
 pnpm i --save-dev @types/cookie-parser
 
 pnpm i --save @nestjs/microservices
+```
+
+# Payments
+
+```bash
+nest generate app payments
+pnpm i --save stripe
 ```
