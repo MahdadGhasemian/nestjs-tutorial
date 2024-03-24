@@ -115,4 +115,18 @@ kubectl create deployment reservations --image=reservations --dry-run=client -o 
 # create reservations folder under templates and move the deployemnt which was generated into the templates/reservations
 cd sleepr
 helm install sleepr .
+helm upgrade sleepr .
+
+kubectl create secret generic mongodb --from-literal=connectionString=YOUR_VALUE
+kubectl create secret generic googleoauthclientid --from-literal=clientId=YOUR_VALUE
+kubectl create secret generic googleoauthclientsecret --from-literal=clientSecret=YOUR_VALUE
+kubectl create secret generic googleoauthrefreshtoken --from-literal=refreshToken=YOUR_VALUE
+kubectl create secret generic jwt --from-literal=jwtSecret=YOUR_VALUE
+kubectl create secret generic stripe --from-literal=secretKey=YOUR_VALUE
+
+kubectl get secrets
+
+kubectl get pods
+kubectl get svc
+
 ```

@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: payments
+  name: payments
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: payments
+  template:
+    metadata:
+      labels:
+        app: payments
+    spec:
+      containers:
+        - image: mahdad1988/sleepr-payments
+          name: payments
+          env:
+            - name: PORT
+              value: '3003'
+            - name: TCP_PORT
+              value: '3004'
+            - name: NOTIFICATIONS_HOST
+              value: notifications
+            - name: NOTIFICATIONS_TCP_PORT
+              value: '3006'
+            - name: STRIPE_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: stripe
+                  key: secretKey
+          ports:
+            - containerPort: 3003
+            - containerPort: 3004
