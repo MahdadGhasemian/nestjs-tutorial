@@ -61,3 +61,4 @@ db.sqlite
 test.sqlite
 
 .mongodb-attlas.md
+.deploy_to_docker_hub.md

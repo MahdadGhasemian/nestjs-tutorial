@@ -129,4 +129,7 @@ kubectl get secrets
 kubectl get pods
 kubectl get svc
 
+kubectl rollout restart deployment auth
+kubectl rollout restart deployment reservations
+
 ```
