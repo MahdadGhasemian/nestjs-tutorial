@@ -69,3 +69,50 @@ pnpm i --save @nestjs/microservices
 nest generate app payments
 pnpm i --save stripe
 ```
+
+# Notifications
+
+email: sleepr85@gmail.com
+strip link: https://dashboard.stripe.com/test/payments
+google console: https://console.cloud.google.com/
+
+```bash
+nest generate app notifications
+pnpm i --save nodemailer
+pnpm i --save-dev @types/nodemailer
+```
+
+# Deploy and Production (Locally)
+
+```bash
+cd apps/reservations
+docker build -t reservations -f . ../../
+docker tag reservations mahdad1988/sleepr-reservations
+docker push mahdad1988/sleepr-reservations
+
+cd apps/payments
+docker build -t payments -f . ../../
+docker tag payments mahdad1988/sleepr-payments
+docker push mahdad1988/sleepr-payments
+
+cd apps/notifications
+docker build -t notifications -f . ../../
+docker tag notifications mahdad1988/sleepr-notifications
+docker push mahdad1988/sleepr-notifications
+
+cd apps/auth
+docker build -t auth -f . ../../
+docker tag auth mahdad1988/sleepr-auth
+docker push mahdad1988/sleepr-auth
+
+# fixed docker file
+# move package.json to every apps which is relative to it
+
+mkdir k8s
+cd k8s
+helm create sleepr
+kubectl create deployment reservations --image=reservations --dry-run=client -o yaml > deployment.yaml
+# create reservations folder under templates and move the deployemnt which was generated into the templates/reservations
+cd sleepr
+helm install sleepr .
+```

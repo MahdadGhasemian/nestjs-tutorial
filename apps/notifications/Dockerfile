@@ -10,12 +10,12 @@ COPY nest-cli.json nest-cli.json
 
 RUN npm install -g pnpm
 
-COPY apps/auth apps/auth
+COPY apps/notifications apps/notifications
 COPY libs libs
 
 RUN pnpm install -r
 
-RUN pnpm run build auth
+RUN pnpm run build notifications
 
 # ============== Stage 2 ================
 FROM node:alpine as production
@@ -34,4 +34,4 @@ RUN pnpm install --prod
 
 COPY --from=development /usr/src/app/dist ./dist
 
-CMD [ "node", "dist/apps/auth/main" ]
+CMD [ "node", "dist/apps/notifications/main" ]
