@@ -133,3 +133,15 @@ kubectl rollout restart deployment auth
 kubectl rollout restart deployment reservations
 
 ```
+
+# E2E Test
+```bash
+mkdir e2e && cd e2e && pnpm init
+pnpm i --save-dev jest ts-jest typescript @types/jest
+pnpm i --save-dev tcp-ping ts-jest ts-node @types/node @types/tcp-ping
+
+docker-compose up e2e
+docker container logs e2e_reservations_1
+docker-compose up --build e2e
+```
+
