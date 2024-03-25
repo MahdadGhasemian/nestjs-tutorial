@@ -116,6 +116,7 @@ kubectl create deployment reservations --image=reservations --dry-run=client -o 
 cd sleepr
 helm install sleepr .
 helm upgrade sleepr .
+helm upgrade sleepr . --recreate-pods
 
 kubectl create secret generic mongodb --from-literal=connectionString=YOUR_VALUE
 kubectl create secret generic googleoauthclientid --from-literal=clientId=YOUR_VALUE
@@ -143,5 +144,7 @@ pnpm i --save-dev tcp-ping ts-jest ts-node @types/node @types/tcp-ping
 docker-compose up e2e
 docker container logs e2e_reservations_1
 docker-compose up --build e2e
+
+pnpm test:e2e
 ```
 
