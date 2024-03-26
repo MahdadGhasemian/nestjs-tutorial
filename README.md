@@ -136,6 +136,7 @@ kubectl rollout restart deployment reservations
 ```
 
 # E2E Test
+
 ```bash
 mkdir e2e && cd e2e && pnpm init
 pnpm i --save-dev jest ts-jest typescript @types/jest
@@ -148,3 +149,9 @@ docker-compose up --build e2e
 pnpm test:e2e
 ```
 
+# Typrorm
+
+```bash
+pnpm i --save @nestjs/typeorm typeorm mysql2
+
+```
