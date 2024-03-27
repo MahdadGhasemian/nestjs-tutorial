@@ -10,10 +10,11 @@ async function bootstrap() {
   const app = await NestFactory.create(AuthModule);
   const configService = app.get(ConfigService);
   app.connectMicroservice({
-    transport: Transport.TCP,
+    transport: Transport.RMQ,
     options: {
-      host: '0.0.0.0',
-      port: configService.get('TCP_PORT'),
+      urls: [configService.getOrThrow<string>('RABBITMQ_URI')],
+      queue: configService.getOrThrow('RABBITMQ_QUEUE_AUTH'),
+      noAck: false,
     },
   });
   app.use(cookieParser());

@@ -155,3 +155,9 @@ pnpm test:e2e
 pnpm i --save @nestjs/typeorm typeorm mysql2
 
 ```
+
+# RabbitMQ
+
+```bash
+pnpm i --save amqplib amqp-connection-manager
+```

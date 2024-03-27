@@ -33,10 +33,10 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
       {
         name: AUTH_SERVICE,
         useFactory: (configService: ConfigService) => ({
-          transport: Transport.TCP,
+          transport: Transport.RMQ,
           options: {
-            host: configService.get('AUTH_HOST'),
-            port: configService.get('AUTH_TCP_PORT'),
+            urls: [configService.getOrThrow<string>('RABBITMQ_URI')],
+            queue: configService.getOrThrow('RABBITMQ_QUEUE_AUTH'),
           },
         }),
         inject: [ConfigService],
@@ -44,10 +44,10 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
       {
         name: PAYMENTS_SERVICE,
         useFactory: (configService: ConfigService) => ({
-          transport: Transport.TCP,
+          transport: Transport.RMQ,
           options: {
-            host: configService.get('PAYMENTS_HOST'),
-            port: configService.get('PAYMENTS_TCP_PORT'),
+            urls: [configService.getOrThrow<string>('RABBITMQ_URI')],
+            queue: configService.getOrThrow('RABBITMQ_QUEUE_PAYMENTS'),
           },
         }),
         inject: [ConfigService],
