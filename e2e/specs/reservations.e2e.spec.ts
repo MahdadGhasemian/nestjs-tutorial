@@ -71,8 +71,8 @@ describe('Reservations', () => {
         amount,
         card: {
           cvc: '413',
-          exp_month: 12,
-          exp_year: 2034,
+          expMonth: 12,
+          expYear: 2034,
           number: '4242 4242 4242 4242',
         },
       },

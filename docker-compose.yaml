@@ -49,7 +49,3 @@ services:
       - .env
     ports:
       - '33060:3306'
-  rabbitmq:
-    image: rabbitmq
-    ports:
-      - 56724:5672
